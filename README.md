@@ -27,8 +27,6 @@ Luckily, the code is pretty plug-and-play. Aside from MATLAB, no other software 
 
 The only other step you need to do ahead of time is to specify the directory in which you will work. Modify the exportDirectory = '' line such that it points to an actual directory on your computer. Then, in that directory, create a new folder for each of your entries in the "TitlingForRuns" variable at the top under experimental variables. Then you should be able to hit Run and start generating results!
 
-# do a paragraph describing the code, summary, etc. no dependency. matlab code.
-
 # License statement
 GNU GPL (General Public License) v3.0.                                  
 https://choosealicense.com/licenses/gpl-3.0/#                           
