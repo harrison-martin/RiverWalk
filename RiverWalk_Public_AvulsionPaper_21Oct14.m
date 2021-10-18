@@ -1,16 +1,24 @@
+% RiverWalk v1.0.0 - River Avulsion Simulation (MATLAB)
+% Copyright (C) 2021 Harrison Martin
+% Developer can be contacted at hkmartin@iu.edu.
+% This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+% This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+% You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Harrison Martin - River Avulsion Simulation                             %
+% RiverWalk v1.0.0 - River Avulsion Simulation (MATLAB)                   %
+% Harrison Martin                                                         %
 % PhD Candidate, Department of Earth & Atmospheric Sciences               %
 % Indiana University                                                      %
 % hkmartin@iu.edu                                                         %
 % October 2021                                                            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
-% This code is intented to accompany, and reproduce the results of, a     %
+%  This code is intented to accompany, and reproduce the results of, a    %
 % manuscript submitted to ESurf by myself and my advisor Dr. Douglas A.   %
-% Edmonds (edmondsd@iu.edu), who also contributed some code.              %
+% Edmonds (edmondsd@iu.edu), who also contributed to the code.            %
 %                                                                         %
-% This release is intended to be as understandable as possible, but as    %
+%  This release is intended to be as understandable as possible, but as   %
 % with any large(r) model, there are some components that might seem      %
 % opaque or idiosyncratic (because sometimes they are). I have tried to   %
 % comment everything as clearly as possible, and usually used intuitive   %
@@ -22,17 +30,20 @@
 % because I wasn't able to test old components sufficiently to have a     %
 % stable release.                                                         %
 %                                                                         %
-% All said, I'm more than happy to provide whatever help I can if you     %
+%  All said, I'm more than happy to provide whatever help I can if you    %
 % want to use or understand this code! Feel free to reach out to me if    %
 % you have any questions. I'm also always happy to chat if you have an    %
 % interesting research problem that you think the model may be able to    %
-% help solve. If you're interested in adding or modifying components,     %
-% I'd love to chat! Collaboration is great. Also, if you reach out,       %
-% there's a fair chance that I may have already tried it at some point    %
-% and have results or code that I would be more than happy to share. I'm  %
-% more than happy to collaborate!                                         %
+% help solve. You're also free to modify the code as you wish, in line    %
+% with the GNU GPL v3.0 license (link below). If you're interested in     %
+% adding or modifying components, I'd love to chat! Collaboration is      %
+% great. Also, there's a fair chance that I may have tried to implement   %
+% some version of it at a previous point and have results or code that I  %
+% would be more than happy to share.                                      %
 %                                                                         %
-% CC BY-NC-ND 4.0 ; Feel free to me with any questions.                   %
+% GNU GPL (General Public License) v3.0.                                  %
+% https://choosealicense.com/licenses/gpl-3.0/#                           %
+% https://csdms.colorado.edu/wiki/License                                 %
 %                                                                         %
 % Thanks for reading, and I hope you enjoy the code!                      %
 %  - Harrison                                                             %
@@ -46,8 +57,7 @@ clearvars
 close all
 
 % Example runs
-TitlingForRuns = {'test1','test2'};	% this naming convention has attraction, repulsion, healing direction, and duration ...
-% importantly, you have to make a folder with this exact title in exportDirectory
+TitlingForRuns = {'test1','test2'};	% this name is used for most of the export files; importantly, you have to make a folder with this exact title in exportDirectory
 TriggeringForRuns = [30,30];	% characteristic avulsion trigger period (yrs)
 AttractionForRuns = [0.25,0.25];	% attraction parameter value
 ResistanceForRuns = [0.50,4.00];	% repulsion parameter value
@@ -115,8 +125,7 @@ for runNum = [1:2]	% how many of your pre-set runs do you want to go through
 
     
     % where does output get saved to?
-%     exportDirectory = '/N/u/hkmartin/Carbonate/Documents/Revisions/Misc Runs/SwitchingTests/5Myrs';
-    exportDirectory = 'C:\Users\Owner\Desktop\Programming\Matlab\Research\Misc Tests';
+    exportDirectory = 'C:\MyName\MyFiles\Codes\';
     exportFolder = TitlingForRuns{runNum};
     exportName = TitlingForRuns{runNum};
     GIFfilename = exportName;
