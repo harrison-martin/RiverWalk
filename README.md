@@ -1,40 +1,48 @@
-# RiverWalk - River Avulsion Simulation
-RiverWalk v1.0.0 - River Avulsion Simulation
+# RiverWalk-Strat - River Avulsion Simulation (Now with Stratigraphy!)
+RiverWalk-Strat v1.0.0 - River Avulsion Simulation (Now with Stratigraphy!)
 
+Caitlin Sifuentes, Harrison Martin, and Doug Edmonds
+
+_Correspondence to/Uploaded by:_
 Harrison Martin
+Postdoctoral Scholar, Division of Geological and Planetary Sciences
+California Institute of Technology 
 
-PhD Candidate, Department of Earth & Atmospheric Sciences 
+hkm@caltech.edu 
 
-Indiana University 
+_or_
 
-hkmartin@iu.edu 
+Douglas Edmonds
+Professor, Department of Earth and Atmospheric Sciences
+Indiana University
 
-This document was last updated: October 2021 
+This document was last updated: August 2024
 
 # Introduction 
-This MATLAB code is intented to accompany, and reproduce the results of, a manuscript submitted to ESurf by myself and my advisor Dr. Douglas A. Edmonds (edmondsd@iu.edu), who also contributed to the code.          
+This MATLAB code is intented to accompany, and reproduce the results of, a manuscript submitted to ESurf by Caitlin Sifuentes[1,2], Harrison K. Martin[1,3], Kyle M. Straub[4], Elizabeth A. Hajek[5], and Douglas A. Edmonds[1].
 
-This release is intended to be as understandable as possible, but as with any large(r) model, there are some components that might seem opaque or idiosyncratic (because sometimes they are). I have tried to comment everything as clearly as possible, and usually used intuitive variable names, at least for stuff a user would usually interact with. I also tried to ensure that everything in the code works as advertised and is stable, but can't warrant perfect performance in all cases. As such, I removed some old, unusued components or setting options that are unnecessary or irrelevant to reproducing the manuscript's results, because I wasn't able to test old components sufficiently to have a stable release.   
+[1]Department of Earth and Atmospheric Sciences, Indiana University, Bloomington, IN, USA
+[2]Geosyntec Consultants, Long Beach, CA, USA
+[3]Division of Geological and Planetary Sciences, California Institute of Technology, Pasadena, CA, USA.
+[4]Department of Earth and Environmental Sciences, Tulane University, New Orleans, LA, USA
+[5]Department of Geosciences, Penn State University, University Park, PA, USA
 
-All said, I'm more than happy to provide whatever help I can if you want to use or understand this code! Feel free to reach out to me if you have any questions. I'm also always happy to chat if you have an interesting research problem that you think the model may be able to help solve. You're also free to modify the code as you wish, in line with the GNU GPL v3.0 license (link below). If you're interested in adding or modifying components, I'd love to chat! Collaboration is great. Also, there's a fair chance that I may have tried to implement some version of it at a previous point and have results or code that I would be more than happy to share.            
+This code is titled RiverWalk-Strat and it is built on a modified form of RiverWalk, a model written by myself [Harrison Martin] and Doug Edmonds as part of my PhD, which can be found at: https://github.com/harrison-martin/RiverWalk. That model was described in two publications: https://doi.org/10.5194/esurf-10-555-2022 and 
+https://doi.org/10.1130/G51138.1. This new version, RiverWalk-Strat is the creation of Caitlin Sifuentes, myself, and Doug Edmonds. Beginning with an earlier version of RiverWalk, it consists of two scripts that run in MATLAB. The first, RiverWalk, generates landscapes as a result of an avulsing river over stratigraphic timescales. This version has been modified to save and export those landscapes at each timestep in a format that can be read by the second script, StratCode. StratCode takes the outputs from RiverWalk and constructs synthetic stratigraphy along specified strike- or dip-oriented cross-sections. It also contains tools for statistically analysing along-strike river position and stratigraphic compensation. 
 
-Thanks for reading, and I hope you enjoy the code!
+Please feel free to reach out if you'd like help understanding or using the code, or for any other questions. We are also always happy to chat if you have an interesting research problem that you think the model may be able to help solve. You're also free to modify the code as you wish, in line with the GNU GPL v3.0 license (link below).           
+
+Thanks for reading, and we hope you enjoy the code!
  - Harrison  
-
-# Pre-requisites
-
-Luckily, the code is pretty plug-and-play. Aside from MATLAB, no other software or files need to be downloaded. You can optionally download a custom colour bar that I created that is the same as parula, but with the first few values set to white instead of deep blue. This just provides more visual contrast betwen low values and zero values. It's included in this directory under the name "whitetip4". If you don't want to use it, just modify the code such that UseCustomColormap = 0 (under codified constants).
-
-The only other step you need to do ahead of time is to specify the directory in which you will work. Modify the exportDirectory = '' line such that it points to an actual directory on your computer. Then, in that directory, create a new folder for each of your entries in the "TitlingForRuns" variable at the top under experimental variables. Then you should be able to hit Run and start generating results!
 
 # License statement
 GNU GPL (General Public License) v3.0.                                  
 https://choosealicense.com/licenses/gpl-3.0/#                           
 https://csdms.colorado.edu/wiki/License
 
-RiverWalk v1.0.0 - River Avulsion Simulation (MATLAB)
-Copyright (C) 2021 Harrison Martin
-Developer can be contacted at hkmartin@iu.edu.
+RiverWalk-Strat v1.0.0 - River Avulsion Simulation (Now with Stratigraphy!) (MATLAB)
+Copyright (C) 2021 Caitlin Sifuentes, Harrison Martin, and Douglas Edmonds
+Correspondence can be addressed to hkm@caltech.edu or edmondsd@iu.edu.
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
