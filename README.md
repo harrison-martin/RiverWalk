@@ -4,10 +4,10 @@ RiverWalk-Strat v1.0.0 - River Avulsion Simulation (Now with Stratigraphy!)
 Caitlin Sifuentes, Harrison Martin, and Doug Edmonds
 
 _Correspondence to/Uploaded by:_
+
 Harrison Martin
 Postdoctoral Scholar, Division of Geological and Planetary Sciences
 California Institute of Technology 
-
 hkm@caltech.edu 
 
 _or_
@@ -15,6 +15,7 @@ _or_
 Douglas Edmonds
 Professor, Department of Earth and Atmospheric Sciences
 Indiana University
+edmondsd@iu.edu
 
 This document was last updated: August 2024
 
