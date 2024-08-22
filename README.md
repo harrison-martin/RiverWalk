@@ -23,10 +23,15 @@ This document was last updated: August 2024
 This MATLAB code is intented to accompany, and reproduce the results of, a manuscript submitted to ESurf by Caitlin Sifuentes[1,2], Harrison K. Martin[1,3], Kyle M. Straub[4], Elizabeth A. Hajek[5], and Douglas A. Edmonds[1].
 
 [1]Department of Earth and Atmospheric Sciences, Indiana University, Bloomington, IN, USA
+
 [2]Geosyntec Consultants, Long Beach, CA, USA
+
 [3]Division of Geological and Planetary Sciences, California Institute of Technology, Pasadena, CA, USA.
+
 [4]Department of Earth and Environmental Sciences, Tulane University, New Orleans, LA, USA
+
 [5]Department of Geosciences, Penn State University, University Park, PA, USA
+
 
 This code is titled RiverWalk-Strat and it is built on a modified form of RiverWalk, a model written by myself [Harrison Martin] and Doug Edmonds as part of my PhD, which can be found at: https://github.com/harrison-martin/RiverWalk. That model was described in two publications: https://doi.org/10.5194/esurf-10-555-2022 and 
 https://doi.org/10.1130/G51138.1. This new version, RiverWalk-Strat is the creation of Caitlin Sifuentes, myself, and Doug Edmonds. Beginning with an earlier version of RiverWalk, it consists of two scripts that run in MATLAB. The first, RiverWalk, generates landscapes as a result of an avulsing river over stratigraphic timescales. This version has been modified to save and export those landscapes at each timestep in a format that can be read by the second script, StratCode. StratCode takes the outputs from RiverWalk and constructs synthetic stratigraphy along specified strike- or dip-oriented cross-sections. It also contains tools for statistically analysing along-strike river position and stratigraphic compensation. 
